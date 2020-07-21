@@ -31,7 +31,7 @@ export class App {
         stopLoader();
       })
       .catch((err) => {
-        console.log(err);
+        $('.input').addClass('is-danger');
         stopLoader();
       });
   };
@@ -44,7 +44,7 @@ export class App {
         stopLoader();
       })
       .catch((err) => {
-        console.log(err);
+        $('.input').addClass('is-danger');
         stopLoader();
       });
   };
