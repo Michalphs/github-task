@@ -6,7 +6,11 @@ import { fieldValidate } from "./helpers/fieldValidate";
 import { startLoader, stopLoader } from "./helpers/loader";
 
 export class App {
-  initializeApp = () => {
+  constructor() {
+    this.initApp();
+  }
+
+  initApp = () => {
     $(".load-username").on("click", () => {
       const field = $(".username.input");
       const fieldVal = field.val();
@@ -31,7 +35,7 @@ export class App {
         stopLoader();
       })
       .catch((err) => {
-        $('.input').addClass('is-danger');
+        $(".input").addClass("is-danger");
         stopLoader();
       });
   };
@@ -44,12 +48,12 @@ export class App {
         stopLoader();
       })
       .catch((err) => {
-        $('.input').addClass('is-danger');
+        $(".input").addClass("is-danger");
         stopLoader();
       });
   };
 
   clearResults = () => {
-    $('.profile-container, .events-container').html('')
-  }
+    $(".profile-container, .events-container").html("");
+  };
 }
