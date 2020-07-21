@@ -20,7 +20,7 @@ export default class History {
 
   getHistoryTemplate = () => {
     const filteredHistory = this.filterData();
-    if (!filteredHistory || filteredHistory.length === 0) return null;
+    if (!filteredHistory || filteredHistory.length === 0) return '';
 
     return `
       <h2 class="subtitle is-4">History</h2>
