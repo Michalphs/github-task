@@ -2,13 +2,17 @@ import "./assets/scss/app.scss";
 import $ from "cash-dom";
 import axios from "axios";
 import Profile from "./Profile";
+import { fieldValidate } from "./helpers/fieldValidate";
 
 export class App {
   initializeApp = () => {
     $(".load-username").on("click", () => {
-      const username = $(".username.input").val();
-      if (username) {
-        this.fetchProfileData(username);
+      const field = $(".username.input");
+      const fieldVal = field.val();
+      const inputIsValid = fieldValidate(field[0]);
+
+      if (inputIsValid) {
+        this.fetchProfileData(fieldVal);
       }
     });
   };
