@@ -1,4 +1,3 @@
-import "./assets/scss/app.scss";
 import $ from "cash-dom";
 import axios from "axios";
 import Profile from "./Profile";
