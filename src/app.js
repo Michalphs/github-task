@@ -12,6 +12,7 @@ export class App {
       const fieldVal = field.val();
       const inputIsValid = fieldValidate(field[0]);
       startLoader();
+      this.clearResults();
 
       if (inputIsValid) {
         this.fetchProfileData(fieldVal);
@@ -47,4 +48,8 @@ export class App {
         stopLoader();
       });
   };
+
+  clearResults = () => {
+    $('.profile-container, .events-container').html('')
+  }
 }
