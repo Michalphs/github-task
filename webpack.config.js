@@ -29,7 +29,7 @@ const config = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['env']
+            presets: ['@babel/preset-env']
           }
         }
       },
@@ -90,7 +90,7 @@ const config = {
     open: true
   },
 
-  devtool: 'inline-source-map'
+  devtool: 'eval-source-map'
 
 };
 

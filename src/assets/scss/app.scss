@@ -1,4 +1,12 @@
-@import "~bulma";
+@import "~bulma/sass/utilities/all";
+@import "~bulma/sass/base/all";
+@import "~bulma/sass/components/navbar";
+@import "~bulma/sass/elements/form";
+@import "~bulma/sass/elements/button";
+@import "~bulma/sass/elements/image";
+@import "~bulma/sass/elements/container";
+@import "~bulma/sass/elements/other";
+@import "~bulma/sass/grid/all";
 @import "~bulma-timeline";
 
 .navbar {
@@ -6,9 +14,20 @@
   margin-bottom: 8px;
 }
 
-.gh-username img{
-  width: 32px;
+.container {
+  padding-left: .75em;
+  padding-right: .75em;
 }
+
+.wrapper {
+    display: flex;
+
+    img {
+      width: 32px;
+      align-self: center;
+      margin-right: 8px;
+    }
+  }
 
 #profile-bio{
   margin-top:10px;
