@@ -1,5 +1,5 @@
 import $ from "cash-dom";
-import { formatDate } from "./helpers/formatDate";
+import { formatDate } from "../helpers/formatDate";
 
 export default class History {
   constructor(history) {

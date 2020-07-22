@@ -1,7 +1,7 @@
 import $ from "cash-dom";
 import "whatwg-fetch";
-import Profile from "./Profile";
-import History from "./History";
+import Profile from "./modules/Profile";
+import History from "./modules/History";
 import { fieldValidate } from "./helpers/fieldValidate";
 import { startLoader, stopLoader } from "./helpers/loader";
 import { checkResponseStatus } from "./helpers/checkResponseStatus";
