@@ -1,9 +1,10 @@
 import $ from "cash-dom";
-import axios from "axios";
+import "whatwg-fetch";
 import Profile from "./Profile";
 import History from "./History";
 import { fieldValidate } from "./helpers/fieldValidate";
 import { startLoader, stopLoader } from "./helpers/loader";
+import { checkResponseStatus } from "./helpers/checkResponseStatus";
 
 export class App {
   constructor() {
@@ -28,26 +29,26 @@ export class App {
   };
 
   fetchProfileData = (username) => {
-    axios
-      .get(`https://api.github.com/users/${username}`)
-      .then(({ data }) => {
+    fetch(`https://api.github.com/users/${username}`)
+      .then((response) => checkResponseStatus(response))
+      .then((data) => {
         new Profile(data);
         stopLoader();
       })
-      .catch((err) => {
+      .catch(() => {
         $(".input").addClass("is-danger");
         stopLoader();
       });
   };
 
   fetchUserHistoryData = (username) => {
-    axios
-      .get(`https://api.github.com/users/${username}/events/public`)
-      .then(({ data }) => {
+    fetch(`https://api.github.com/users/${username}/events/public`)
+      .then((response) => checkResponseStatus(response))
+      .then((data) => {
         new History(data);
         stopLoader();
       })
-      .catch((err) => {
+      .catch(() => {
         $(".input").addClass("is-danger");
         stopLoader();
       });
